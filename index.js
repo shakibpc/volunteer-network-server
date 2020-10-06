@@ -1,5 +1,5 @@
 const express = require('express')
-// require('dotenv').config()
+require('dotenv').config()
 const bodyParser = require('body-parser');
 const cors = require('cors');
 // const { ObjectId } = require('mongodb');
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 })
 
 client.connect(err => {
-  const addEvents = client.db("volunteer-network").collection("eventRegister");
+  const addEvents = client.db(`${process.env.DB_NAME}`).collection("eventRegister");
 
  console.log('DB Connected');
 
