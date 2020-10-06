@@ -40,4 +40,4 @@ app.get('/', (req, res) => {
   res.send('Hello!')
 })
 
-app.listen(port);
+app.listen(process.env.PORT || port);
